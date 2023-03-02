@@ -1,0 +1,11 @@
+{
+    "db": {
+        "database": "lms",
+        "username": "postgres",
+        "password": "hamza",
+        "logging": false,
+        "host": "localhost",
+        "dialect": "postgres"
+    }
+
+}
