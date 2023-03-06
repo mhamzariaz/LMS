@@ -10,6 +10,7 @@ var studentRouter = require('./routes/students')
 var teacherRouter = require('./routes/teachers')
 var courseRouter = require('./routes/course')
 var sectionRouter = require('./routes/sections')
+var commonRouter = require('./routes/common')
 
 var app = express();
 
@@ -26,8 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
 app.use('/students', studentRouter);
 app.use('/teachers', teacherRouter);
-app.use('/course', courseRouter)
-app.use('/sections', sectionRouter)
+app.use('/course', courseRouter);
+app.use('/sections', sectionRouter);
+app.use('/authentication', commonRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
