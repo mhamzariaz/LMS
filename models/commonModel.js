@@ -26,12 +26,12 @@ module.exports = {
 
         let user = await models.user.findOne({
             where:{
-                userName: body.userName
+                email: body.email
             }
         })
         if (!user)
         {
-            return "invalid username/password"
+            return "invalid email/password"
         }
         user = user.dataValues;
         const accessToken = generateAccessToken(user)

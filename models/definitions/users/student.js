@@ -32,17 +32,21 @@ student.init({
         allowNull: false,
         type: DataTypes.INTEGER
    }, 
-
-
-
    
 }, 
-
     {
         timestamps: true,
         paranoid: true, 
         sequelize,
-        modelName: "Students"
+        modelName: "Students",
+        hooks: {
+          afterDestroy: function (instance, options) {
+              instance.getUser().then(user=> user.destroy()); // Softdelete on product table
+              console.log('after destroy: destroyed');
+          }
+     }
+
+
     }
 );
 

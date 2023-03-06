@@ -11,6 +11,10 @@
     "roles": {
         "student": 1,
         "teacher": 2
+    },
+
+    "jwt":{ 
+        "secret": "f638dd443ed6531503422943ecb18bd1ba28f23ff7af2e26f2b0344d0ace153f82d7e7567e584f9a782226c0ba697dbf20c4d5d9ca70b2786445c057658b3b31"
     }
 
 }

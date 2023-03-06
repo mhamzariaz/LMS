@@ -19,12 +19,12 @@ let models = {
 }
 
 //user to student one-to-many
-user.hasOne(student, {onDelete: "CASCADE", foreignKey:{ name: 'userID', allowNull: false, unique: true}})
-student.belongsTo(user, {onDelete: "CASCADE", foreignKey: { name: 'userID', allowNull: false, unique: true}})
+user.hasOne(student, {onDelete: "CASCADE", hooks: true, foreignKey:{ name: 'userID', allowNull: false, unique: true}})
+student.belongsTo(user, {onDelete: "CASCADE", hooks: true, foreignKey: { name: 'userID', allowNull: false, unique: true}})
 
 //user to teacher one-to-many
-user.hasOne(teacher, {onDelete: "CASCADE", foreignKey:{ name: 'userID', allowNull: false, unique: true}})
-teacher.belongsTo(user, {onDelete: "CASCADE", foreignKey:{ name: 'userID', allowNull: false, unique: true}})
+user.hasOne(teacher, {onDelete: "CASCADE", hooks: true, foreignKey:{ name: 'userID', allowNull: false, unique: true}})
+teacher.belongsTo(user, {onDelete: "CASCADE", hooks: true, foreignKey:{ name: 'userID', allowNull: false, unique: true}})
 
 //student and course many-to-many
 //teacher and course many-to-many
