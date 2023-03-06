@@ -15,6 +15,24 @@ teacher.init({
    typeOfUser: {
         allowNull: false,
         type: DataTypes.INTEGER
+   },
+
+   deptName: {
+        allowNull: false,
+        type: DataTypes.STRING
+   },
+
+   teacherID: {
+        allowNull: false,
+        type: DataTypes.STRING
+   },
+
+   officeLocation: {
+        type: DataTypes.STRING
+   },
+
+   officeHours: {
+        type: DataTypes.STRING
    }
    
 }, 

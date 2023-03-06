@@ -6,6 +6,11 @@
         "logging": false,
         "host": "localhost",
         "dialect": "postgres"
+    },
+
+    "roles": {
+        "student": 1,
+        "teacher": 2
     }
 
 }
