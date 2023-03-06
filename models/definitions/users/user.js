@@ -41,12 +41,11 @@ user.init({
     }
    
 }, 
-
     {
         timestamps: true,
         paranoid: true, 
         sequelize,
-        modelName: "Users"
+        modelName: "Users",
     }
 );
 

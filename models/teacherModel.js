@@ -27,5 +27,40 @@ module.exports = {
         const result = await models.teacher.create(teacherData);
         return result
     },
+    getAllTeachers: async function(){
+        let result = await models.teacher.findAll({
+            include: {
+                model: models.user
+            }
+        });
+        return result;
+    },
+
+    getTeacher: async function(query){
+        const result = await models.teacher.findAll({
+            where: {
+                id: query.id
+            },
+            include: {
+                model: models.user
+            }
+        })
+        return result;
+    },
+
+    deleteTeacher: async function(query){
+
+        const teacher = await models.teacher.findOne({
+            where: {
+                id: query.id
+            },
+        })
+
+        if(teacher){
+            await teacher.destroy()
+            return "teacher deleted"
+        }
+        
+    }
 
 }

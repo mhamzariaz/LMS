@@ -41,7 +41,13 @@ teacher.init({
         timestamps: true,
         paranoid: true, 
         sequelize,
-        modelName: "Teachers"
+        modelName: "Teachers",
+        hooks: {
+          afterDestroy: function (instance, options) {
+              instance.getUser().then(user=> user.destroy()); // Softdelete on product table
+              console.log('after destroy: destroyed');
+          }
+        }
 
     }
 );
