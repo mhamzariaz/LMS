@@ -18,10 +18,23 @@ student.init({
         type: DataTypes.STRING
    },
 
+   deptName: {
+        allowNull: false,
+        type: DataTypes.STRING
+   },
+
+   semester: {
+        allowNull: false,
+        type: DataTypes.INTEGER
+   },
+
    typeOfUser: {
         allowNull: false,
         type: DataTypes.INTEGER
-   }
+   }, 
+
+
+
    
 }, 
 

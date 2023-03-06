@@ -19,10 +19,20 @@ course.init({
         
     }, 
 
-    courseID: {
+    courseCode: {
         allowNull: false,
         unique: true,
         type: DataTypes.STRING,
+    },
+
+    creditHours: {
+        allowNull: false,
+        type: DataTypes.INTEGER
+    },
+
+    lab: {
+        allowNull: false,
+        type: DataTypes.BOOLEAN
     }
    
 }, 
@@ -31,7 +41,7 @@ course.init({
         timestamps: true,
         paranoid: true, 
         sequelize,
-        modelName: "Admin"
+        modelName: "Courses"
 
     }
 );
